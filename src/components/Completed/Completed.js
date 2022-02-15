@@ -65,7 +65,7 @@ function All(props) {
                     {...register("title", { required: true })}
                   ></input>
                   <button className="btn styledBtn" type="submit">
-                    <FontAwesomeIcon icon={faCheck} />
+                    <FontAwesomeIcon className="icon" icon={faCheck} />
                   </button>
                 </div>
               </form>
@@ -80,7 +80,10 @@ function All(props) {
                       <div className="d-flex lidiv w-100 align-items-center justify-content-between">
                         <div className="d-flex align-items-center">
                           <button className="btn">
-                            <FontAwesomeIcon icon={faCircleCheck} />
+                            <FontAwesomeIcon
+                              className="icon"
+                              icon={faCircleCheck}
+                            />
                           </button>
                           <li>
                             <del>{item.title}</del>
@@ -93,7 +96,7 @@ function All(props) {
                           >
                             <FontAwesomeIcon
                               icon={faCircleXmark}
-                              className=""
+                              className="icon"
                             />
                           </button>
                         </div>

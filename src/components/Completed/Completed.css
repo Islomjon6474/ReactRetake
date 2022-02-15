@@ -9,6 +9,14 @@ li {
 .coll {
   height: 600px;
 }
+
+.icon {
+  color: rgb(187, 187, 187);
+}
+del {
+  color: rgb(187, 187, 187);
+}
+
 span {
   border: 1px solid black;
   width: 50px;

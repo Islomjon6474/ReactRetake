@@ -80,7 +80,10 @@ function All(props) {
                       <div className="d-flex lidiv w-100 align-items-center justify-content-between">
                         <div className="d-flex w-100 align-items-center">
                           <button className="btn">
-                            <FontAwesomeIcon icon={faCircleNotch} />
+                            <FontAwesomeIcon
+                              className="icon"
+                              icon={faCircleNotch}
+                            />
                           </button>
                           <li>{item.title}</li>
                         </div>
@@ -91,7 +94,7 @@ function All(props) {
                           >
                             <FontAwesomeIcon
                               icon={faCircleXmark}
-                              className=""
+                              className="icon"
                             />
                           </button>
                         </div>

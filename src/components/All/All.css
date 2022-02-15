@@ -1,5 +1,7 @@
 li {
   list-style-type: none;
+  font-family: "Josefin Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }
 .lidiv {
   /* width: 500px; */
@@ -19,4 +21,8 @@ span {
 }
 del {
   color: rgb(187, 187, 187);
+}
+button {
+  font-family: "Josefin Sans", sans-serif;
+  font-family: "Montserrat", sans-serif;
 }

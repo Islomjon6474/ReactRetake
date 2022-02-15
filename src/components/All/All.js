@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import DataContext from "../../contexts/ProductsContexts";
 import "../All/All.css";
@@ -14,7 +14,8 @@ import {
 import { useForm } from "react-hook-form";
 
 function All(props) {
-  const { data, setData } = useContext(DataContext);
+  const { data, setData, number, setNumber } = useContext(DataContext);
+
   console.log(data);
 
   const navigate = useNavigate();
@@ -38,6 +39,7 @@ function All(props) {
       title: title,
       completed: false,
     };
+    setNumber(number + 1);
     t.push(obj);
     setData(t);
   };
@@ -53,12 +55,14 @@ function All(props) {
         title: title,
         completed: false,
       };
+      setNumber(number + 1);
       t.push(obj);
     } else {
       const obj = {
         title: title,
         completed: true,
       };
+      setNumber(number - 1);
       t.push(obj);
     }
     setData(t);
@@ -143,7 +147,7 @@ function All(props) {
                               icon={faCircleNotch}
                             />
                           </button>
-                          <li>{item.title}</li>
+                          <li className="text-dark">{item.title}</li>
                         </div>
                         <div>
                           <button
@@ -163,6 +167,7 @@ function All(props) {
               })}
             </ul>
             <div className="d-flex w-100  align-items-center justify-content-between">
+              <div className="text-muted">{number} active tasks</div>
               <button className="btn text-primary">All</button>
               <button className="btn" onClick={() => navigate(`/uncompleted`)}>
                 Active

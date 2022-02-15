@@ -20,6 +20,7 @@ function App() {
     { title: "Tesk One", completed: false },
     { title: "Tesk two", completed: true },
   ]);
+  const [number, setNumber] = useState(5);
   return (
     <div className="App">
       <img
@@ -30,7 +31,7 @@ function App() {
       <h1 className="text-white text-center">TODO</h1>
 
       <div className="cont shadow ">
-        <DataContext.Provider value={{ data, setData }}>
+        <DataContext.Provider value={{ data, setData, number, setNumber }}>
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<All />} />

@@ -13,7 +13,7 @@ import {
 import { useForm } from "react-hook-form";
 
 function All(props) {
-  const { data, setData } = useContext(DataContext);
+  const { data, setData, number, setNumber } = useContext(DataContext);
   console.log(data);
 
   const navigate = useNavigate();
@@ -107,6 +107,7 @@ function All(props) {
               })}
             </ul>
             <div className="d-flex w-100 align-items-center justify-content-between">
+              <div className="text-muted">{number} active tasks</div>
               <button className="btn" onClick={() => navigate(`/`)}>
                 All
               </button>

@@ -13,7 +13,7 @@ import {
 import { useForm } from "react-hook-form";
 
 function All(props) {
-  const { data, setData } = useContext(DataContext);
+  const { data, setData, number, setNumber } = useContext(DataContext);
   console.log(data);
 
   const navigate = useNavigate();
@@ -38,6 +38,29 @@ function All(props) {
       completed: false,
     };
     t.push(obj);
+    setData(t);
+  };
+
+  const makeCompleted = (index) => {
+    const title = data[index].title;
+    // console.log(title);
+    const t = [...data];
+    t.splice(index, 1);
+
+    if (data[index].completed) {
+      const obj = {
+        title: title,
+        completed: false,
+      };
+      t.push(obj);
+    } else {
+      const obj = {
+        title: title,
+        completed: true,
+      };
+      setNumber(number - 1);
+      t.push(obj);
+    }
     setData(t);
   };
 
@@ -79,7 +102,10 @@ function All(props) {
                     <>
                       <div className="d-flex lidiv w-100 align-items-center justify-content-between">
                         <div className="d-flex w-100 align-items-center">
-                          <button className="btn">
+                          <button
+                            onClick={() => makeCompleted(index)}
+                            className="btn"
+                          >
                             <FontAwesomeIcon
                               className="icon"
                               icon={faCircleNotch}
@@ -105,6 +131,7 @@ function All(props) {
               })}
             </ul>
             <div className="d-flex w-100 align-items-center justify-content-between">
+              <div className="text-muted">{number} active tasks</div>
               <button className="btn" onClick={() => navigate(`/`)}>
                 All
               </button>

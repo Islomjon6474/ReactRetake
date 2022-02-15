@@ -21,6 +21,7 @@ function All(props) {
   const handleDelete = (index) => {
     const t = [...data];
     t.splice(index, 1);
+    setNumber(number - 1);
     setData(t);
   };
 
@@ -37,6 +38,7 @@ function All(props) {
       title: title,
       completed: false,
     };
+    setNumber(number + 1);
     t.push(obj);
     setData(t);
   };

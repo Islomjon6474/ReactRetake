@@ -4,7 +4,7 @@
 }
 body {
   background-image: url("https://i.ytimg.com/vi/SN3xlcjbvUo/maxresdefault.jpg");
-  background-size: cover;
+  background-size: 100%;
   /* height: 500px; */
 }
 

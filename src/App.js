@@ -23,11 +23,6 @@ function App() {
   const [number, setNumber] = useState(5);
   return (
     <div className="App">
-      <img
-        className="img"
-        src="https://i.ytimg.com/vi/SN3xlcjbvUo/maxresdefault.jpg"
-        alt=""
-      />
       <h1 className="text-white text-center">TODO</h1>
 
       <div className="cont shadow ">

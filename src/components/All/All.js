@@ -42,6 +42,7 @@ function All(props) {
     setNumber(number + 1);
     t.push(obj);
     setData(t);
+    info.title = "";
   };
 
   const makeCompleted = (index) => {
